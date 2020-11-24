@@ -1,0 +1,7 @@
+21:01:06.385 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+21:01:06.578 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+21:02:29.048 [Thread-1] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+21:02:29.055 [NamespaceSystem-akka.actor.default-dispatcher-9] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: jm-cleaner
+21:02:29.062 [NamespaceSystem-akka.actor.default-dispatcher-11] INFO com.firebase.core.namespace.NamespaceActor - Stopping namespace actor for jm-cleaner
+21:02:29.063 [NamespaceSystem-akka.actor.default-dispatcher-11] INFO com.firebase.core.namespace.NamespaceActor - Gauges removed for jm-cleaner
+21:02:29.066 [Thread-1] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.

@@ -1,0 +1,75 @@
+$primary-color: #23B8EC;
+$secondary-color: #02507a;
+$transparent: rgba(0, 0, 0, 0);
+
+.banner {
+  height: 100vh;
+  background-image: url(../../../../../assets/images/foggy-portrait.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  @media (orientation: landscape) {
+    background-image: url(../../../../../assets/images/foggy-landscape.jpg);
+    background-position: 50%;
+  }
+
+  .shade {
+    background-color: rgba(#000, .5);
+    height: 100%;
+  }
+
+  mat-card {
+    // background: rgba(#000, .5);
+    background: none;
+    border: none;
+    box-shadow: none;
+    z-index: 10;
+    // margin-bottom: 60%;
+    margin-top: 27.5%;
+    width: 80%;
+
+    @media (orientation: landscape) {
+      margin-top: 20%;
+    }
+
+
+    .text-1 {
+      font-size: 2rem;
+      font-weight: 400;
+      color: #fff;
+      line-height: 2;
+      font-family: 'Monserrat', sans-serif;
+    }
+
+    .text-2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $primary-color;
+      padding: 2rem;
+      font-family: 'Monserrat', sans-serif;
+    }
+
+    .more-info {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: .5rem;
+      text-transform: uppercase;
+      border: 2px solid #fff;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      transition: all .3s ease-in-out;
+      font-size: 2rem;
+      background-color: rgba(0, 0, 0, .35);
+      line-height: 2;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+        border: 2px solid $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

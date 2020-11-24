@@ -1,0 +1,47 @@
+<mat-card>
+  <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+
+    <mat-card-content class="mt-4">
+      <mat-form-field class="w-100">
+        <mat-label>Titulo</mat-label>
+        <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="productService.selectedProduct.title">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Descripcion</mat-label>
+        <input matInput type="text" name="description" #description="ngModel" [(ngModel)]="productService.selectedProduct.description">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Imagen</mat-label>
+        <input matInput type="text" name="image" #image="ngModel" [(ngModel)]="productService.selectedProduct.image">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Precio</mat-label>
+        <input matInput type="text" name="price" #price="ngModel" [(ngModel)]="productService.selectedProduct.price">
+      </mat-form-field>
+
+      <mat-card-actions fxLayoutAlign="center center" fxLayoutGap="1rem">
+        <button type="submit" mat-raised-button color="primary" >
+          <div fxLayoutAlign="space-between center" fxLayoutGap="1rem">
+            <mat-icon>done</mat-icon>
+            <span>
+              Ok
+            </span>
+          </div>
+        </button>
+        <button type="reset" mat-raised-button color="warn" (click)="resetForm(productForm)">
+          <div fxLayoutAlign="space-between center" fxLayoutGap="1rem">
+            <mat-icon>sync</mat-icon>
+            <span>
+              Reset
+            </span>
+          </div>
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+    </form>
+</mat-card>

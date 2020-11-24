@@ -1,0 +1,124 @@
+<h1 class="text-center mt-3">
+  Listado de Tiendas
+</h1>
+
+<!-- mobile -->
+<div fxHide.gt-xs="true">
+  <p>CELULAR</p>
+  <div *ngFor="let store of storesList">
+    <mat-card class="mb-2 pb-4">
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Nombre</mat-card-subtitle>
+        <span>{{store.name}}</span>
+      </mat-card-title-group>
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Direccion</mat-card-subtitle>
+        <span>{{store.address}}</span>
+      </mat-card-title-group>
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Tipo de Tienda</mat-card-subtitle>
+        <span>{{store.typeOfStore ? 'Farmacia' : 'Optica'}}</span>
+      </mat-card-title-group>
+
+      <!-- <div *ngIf="store.isFranchise"> -->
+        <mat-card-title-group>
+          <mat-card-subtitle>Franquicia</mat-card-subtitle>
+          <span>{{store.isFranchise ? store.franchiseID : 'No'}}</span>
+        </mat-card-title-group>
+      <!-- </div> -->
+
+      <div *ngIf="store.website">
+        <mat-card-title-group>
+          <mat-card-subtitle>Sitio Web</mat-card-subtitle>
+          <span>{{store.website}}</span>
+        </mat-card-title-group>
+      </div>
+
+      <div *ngIf="store.phone">
+        <mat-card-title-group>
+          <mat-card-subtitle>Telefono</mat-card-subtitle>
+          <span>{{store.phone}}</span>
+        </mat-card-title-group>
+      </div>
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Localidad</mat-card-subtitle>
+        <span>{{store.location}}</span>
+      </mat-card-title-group>
+
+      <hr>
+      <mat-card-actions fxLayoutAlign="center center" fxLayoutGap="1rem">
+        <button mat-fab color="primary" (click)="editStore(store)">
+          <mat-icon>create</mat-icon>
+        </button>
+        <button mat-fab color="warn" (click)="deleteStore(store.$key)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- bigger than mobile -->
+<div fxHide.lt-sm="true">
+  <p>TABLET +</p>
+  <div *ngFor="let store of storesList">
+    <mat-card class="mb-2 pb-4">
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Nombre</mat-card-subtitle>
+        <span>{{store.name}}</span>
+      </mat-card-title-group>
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Direccion</mat-card-subtitle>
+        <span>{{store.address}}</span>
+      </mat-card-title-group>
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Tipo de Tienda</mat-card-subtitle>
+        <span>{{store.typeOfStore ? 'Farmacia' : 'Optica'}}</span>
+      </mat-card-title-group>
+
+      <!-- <div *ngIf="store.isFranchise"> -->
+        <mat-card-title-group>
+          <mat-card-subtitle>Franquicia</mat-card-subtitle>
+          <span>{{store.isFranchise ? store.franchiseID : 'No'}}</span>
+        </mat-card-title-group>
+      <!-- </div> -->
+
+      <div *ngIf="store.website">
+        <mat-card-title-group>
+          <mat-card-subtitle>Sitio Web</mat-card-subtitle>
+          <span>{{store.website}}</span>
+        </mat-card-title-group>
+      </div>
+
+      <div *ngIf="store.phone">
+        <mat-card-title-group>
+          <mat-card-subtitle>Telefono</mat-card-subtitle>
+          <span>{{store.phone}}</span>
+        </mat-card-title-group>
+      </div>
+
+      <mat-card-title-group>
+        <mat-card-subtitle>Localidad</mat-card-subtitle>
+        <span>{{store.location}}</span>
+      </mat-card-title-group>
+
+      <hr>
+      <mat-card-actions fxLayoutAlign="center center" fxLayoutGap="1rem">
+        <button mat-fab color="primary" (click)="editStore(store)">
+          <mat-icon>create</mat-icon>
+        </button>
+        <button mat-fab color="warn" (click)="deleteStore(store.$key)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

@@ -1,0 +1,72 @@
+<h1 class="text-center mt-3">
+  Listado de Tiendas
+</h1>
+
+<!-- mobile -->
+<div fxHide.gt-xs="true">
+  <p>CELULAR</p>
+  <div *ngFor="let product of productsList">
+    <mat-card class="mb-2 pb-4">
+      <mat-card-title-group>
+        <mat-card-subtitle>Titulo</mat-card-subtitle>
+        <span>{{product.title}}</span>
+      </mat-card-title-group>
+      <mat-card-title-group>
+        <mat-card-subtitle>Descripcion</mat-card-subtitle>
+        <span>{{product.description}}</span>
+      </mat-card-title-group>
+      <mat-card-title-group>
+      <mat-card-subtitle>Imagen</mat-card-subtitle>
+      <span>{{product.image}}</span>
+      </mat-card-title-group>
+      <mat-card-title-group>
+        <mat-card-subtitle>Precio</mat-card-subtitle>
+        <span>{{product.price | currency}}</span>
+      </mat-card-title-group>
+      <hr>
+      <mat-card-actions fxLayoutAlign="center center" fxLayoutGap="1rem">
+        <button mat-fab color="primary" (click)="editProduct(product)">
+          <mat-icon>create</mat-icon>
+        </button>
+        <button mat-fab color="warn" (click)="deleteProduct(product.$key)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- bigger than mobile -->
+<div fxHide.lt-sm="true">
+  <p>TABLET +</p>
+  <div *ngFor="let product of productsList">
+    <mat-card class="mb-2 pb-4">
+      <mat-card-title-group>
+        <mat-card-subtitle>Titulo</mat-card-subtitle>
+        <span>{{product.title}}</span>
+      </mat-card-title-group>
+      <mat-card-title-group>
+        <mat-card-subtitle>Descripcion</mat-card-subtitle>
+        <span>{{product.description}}</span>
+      </mat-card-title-group>
+      <mat-card-title-group>
+        <mat-card-subtitle>Imagen</mat-card-subtitle>
+        <span>{{product.image}}</span>
+      </mat-card-title-group>
+      <mat-card-title-group>
+        <mat-card-subtitle>Precio</mat-card-subtitle>
+        <span>{{product.price | currency}}</span>
+      </mat-card-title-group>
+      <hr>
+      <mat-card-actions fxLayoutAlign="center center" fxLayoutGap="1rem">
+        <button mat-fab color="primary" (click)="editProduct(product)">
+          <mat-icon>create</mat-icon>
+        </button>
+        <button mat-fab color="warn" (click)="deleteProduct(product.$key)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

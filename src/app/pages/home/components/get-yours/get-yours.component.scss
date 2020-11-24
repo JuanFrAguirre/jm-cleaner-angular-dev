@@ -1,0 +1,55 @@
+$primary-color: #23B8EC;
+$secondary-color: #02507a;
+$transparent: rgba(0, 0, 0, 0);
+
+.get-yours {
+  min-height: 80vh;
+  background: url(../../../../../assets/images/cafe-gafas.jpg);
+  background-position: 80%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+mat-card {
+  background: none;
+  border: none;
+  box-shadow: none !important;
+}
+
+.title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 6rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  border: 2px solid #fff;
+  padding: 1rem 2rem;
+  transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 5px;
+  line-height: 2;
+  font-family: 'Montserrat', sans-serif;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+    border: 2px solid $primary-color;
+    cursor: pointer;
+  }
+}
+
+.shade {
+  min-height: 80vh;
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+<div fxHide.gt-xs="true" class="video-container" fxLayoutAlign="center center">
+  <youtube-player videoId={{videoId}} suggestedQuality={{suggestedQuality}} [height]="200" [width]="350"></youtube-player>
+</div>
+<div fxHide="true" fxShow.sm="true" class="video-container" fxLayoutAlign="center center">
+  <youtube-player videoId={{videoId}} suggestedQuality={{suggestedQuality}} [height]="300" [width]="600"></youtube-player>
+</div>
+<div fxHide="true" fxShow.md="true" class="video-container" fxLayoutAlign="center center">
+  <youtube-player videoId={{videoId}} suggestedQuality={{suggestedQuality}} [height]="400" [width]="800"></youtube-player>
+</div>
+<div fxHide="true" fxShow.gt-md="true" class="video-container" fxLayoutAlign="center center">
+  <youtube-player videoId={{videoId}} suggestedQuality={{suggestedQuality}} [height]="600" [width]="1024"></youtube-player>
+</div>

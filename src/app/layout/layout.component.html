@@ -1,0 +1,28 @@
+
+<mat-sidenav-container class="h-100">
+
+  <mat-sidenav #sidenav [(opened)]="menuStatus" class="h-100" fxHide.gt-xs="true"  fxLayout="column" fxLayoutAlign="center center">
+    <mat-toolbar color="primary">
+      Menu
+    </mat-toolbar>
+    <mat-nav-list fxLayout="column">
+      <a mat-list-item (click)="sidenav.close()" routerLink="/inicio">Inicio</a>
+      <a mat-list-item (click)="sidenav.close()" routerLink="/productos">Productos</a>
+      <a mat-list-item (click)="sidenav.close()" routerLink="/tiendas">Tiendas</a>
+      <a mat-list-item (click)="sidenav.close()" routerLink="/compania">Compañía</a>
+      <a mat-list-item (click)="sidenav.close()" routerLink="/contacto">Contacto</a>
+    </mat-nav-list>
+
+
+  </mat-sidenav>
+
+
+  <mat-sidenav-content class="h-100">
+    <app-header fxHide.lt-sm="true"></app-header>
+    <router-outlet></router-outlet>
+    <app-header class="header-mobile" fxHide.gt-xs="true"></app-header>
+  </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>

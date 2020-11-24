@@ -1,0 +1,78 @@
+<mat-card>
+  <form #storeForm="ngForm" (ngSubmit)="onSubmit(storeForm)">
+
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="storeService.selectedStore.$key">
+
+    <mat-card-content class="mt-4">
+      <mat-form-field class="w-100">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" name="name" #name="ngModel" [(ngModel)]="storeService.selectedStore.name">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Dirección</mat-label>
+        <input matInput type="text" name="address" #address="ngModel" [(ngModel)]="storeService.selectedStore.address">
+      </mat-form-field>
+
+      <hr>
+      <mat-label class="pr-4">Optica</mat-label>
+      <mat-slide-toggle name="typeOfStore" #typeOfStore="ngModel" [(ngModel)]="storeService.selectedStore.typeOfStore">
+      </mat-slide-toggle>
+      <mat-label class="pl-4">Farmacia</mat-label>
+
+      <hr>
+      <mat-slide-toggle name="isFranchise" #isFranchise="ngModel" [(ngModel)]="storeService.selectedStore.isFranchise">Franquicia
+      </mat-slide-toggle>
+      <hr>
+
+      <mat-form-field class="w-100">
+        <mat-label>Nombre de la Franquicia</mat-label>
+        <input matInput type="text" name="franchiseID" #franchiseID="ngModel" [(ngModel)]="storeService.selectedStore.franchiseID" [(disabled)]="!storeService.selectedStore.isFranchise">
+        <mat-autocomplete>
+          <mat-option *ngFor="let xx of">
+
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Teléfono</mat-label>
+        <input matInput type="text" name="phone" #phone="ngModel" [(ngModel)]="storeService.selectedStore.phone">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Coordenadas</mat-label>
+        <input matInput type="text" name="coordenates" #coordenates="ngModel" [(ngModel)]="storeService.selectedStore.coordenates">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Sitio Web</mat-label>
+        <input matInput type="text" name="website" #website="ngModel" [(ngModel)]="storeService.selectedStore.website">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Localidad</mat-label>
+        <input matInput type="text" name="location" #location="ngModel" [(ngModel)]="storeService.selectedStore.location">
+      </mat-form-field>
+
+      <mat-card-actions fxLayoutAlign="center center" fxLayoutGap="1rem">
+        <button type="submit" mat-raised-button color="primary" >
+          <div fxLayoutAlign="space-between center" fxLayoutGap="1rem">
+            <mat-icon>done</mat-icon>
+            <span>
+              Ok
+            </span>
+          </div>
+        </button>
+        <button type="reset" mat-raised-button color="warn" (click)="resetForm(storeForm)">
+          <div fxLayoutAlign="space-between center" fxLayoutGap="1rem">
+            <mat-icon>sync</mat-icon>
+            <span>
+              Reset
+            </span>
+          </div>
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+  </form>
+</mat-card>

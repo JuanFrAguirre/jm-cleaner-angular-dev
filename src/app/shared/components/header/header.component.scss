@@ -1,0 +1,24 @@
+
+
+.mat-toolbar-not-mobile {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0.7211981566820276) 55%, rgba(255,255,255,0) 100%);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.mat-toolbar-mobile {
+  background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0.7211981566820276) 55%, rgba(255,255,255,0) 100%);
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.isotype {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3rem;
+  font-family: 'Montserrat', sans-serif;
+}
