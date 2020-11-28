@@ -27,12 +27,11 @@
 
       <mat-form-field class="w-100">
         <mat-label>Nombre de la Franquicia</mat-label>
-        <input matInput type="text" name="franchiseID" #franchiseID="ngModel" [(ngModel)]="storeService.selectedStore.franchiseID" [(disabled)]="!storeService.selectedStore.isFranchise">
-        <mat-autocomplete>
-          <mat-option *ngFor="let xx of">
-
+        <mat-select name="franchiseID" #franchiseID="ngModel" [(ngModel)]="storeService.selectedStore.franchiseID" [(disabled)]="!storeService.selectedStore.isFranchise">
+          <mat-option *ngFor="let franchise of pharmaciesFranchises" [value]="franchise.name">
+            {{franchise.name}}
           </mat-option>
-        </mat-autocomplete>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="w-100">

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subscription } from 'rxjs';
 import { Product } from 'src/app/core/models/product.model';
 import { ProductService } from 'src/app/core/services/product.service';
 
@@ -8,10 +9,12 @@ import { ProductService } from 'src/app/core/services/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
 
   productsList: Product[];
   selectedProduct: Product;
+  subscription: Subscription;
+  loading: boolean;
 
   constructor(
     public productService: ProductService,
@@ -19,7 +22,8 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.productService.getProducts().snapshotChanges().subscribe(items =>
+    this.loading = true;
+    this.subscription = this.productService.getProducts().snapshotChanges().subscribe(items =>
       {
         this.productsList = [];
         items.forEach(element => {
@@ -28,6 +32,7 @@ export class ProductListComponent implements OnInit {
           x['$key'] = element.key;
           this.productsList.push(x as Product);
         });
+        this.loading = false;
       });
   }
 
@@ -42,6 +47,10 @@ export class ProductListComponent implements OnInit {
       verticalPosition: 'bottom',
       horizontalPosition: 'right'
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

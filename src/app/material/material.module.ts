@@ -18,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const material = [
   CommonModule,
@@ -39,6 +40,7 @@ const material = [
   MatCheckboxModule,
   MatSlideToggleModule,
   MatAutocompleteModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({

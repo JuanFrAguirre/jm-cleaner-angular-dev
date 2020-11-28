@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from 'src/app/core/models/store.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { StoreService } from 'src/app/core/services/store.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',
   styleUrls: ['./store-list.component.scss']
 })
-export class StoreListComponent implements OnInit {
+export class StoreListComponent implements OnInit, OnDestroy {
 
   storesList: Store[];
   selectedStore: Store;
+  subscription: Subscription;
+  loading: boolean;
 
   constructor(
     public storeService: StoreService,
@@ -19,7 +22,8 @@ export class StoreListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.storeService.getStores().snapshotChanges().subscribe(items =>
+    this.loading = true;
+    this.subscription = this.storeService.getStores().snapshotChanges().subscribe(items =>
       {
         this.storesList = [];
         items.forEach(element => {
@@ -28,6 +32,7 @@ export class StoreListComponent implements OnInit {
           x['$key'] = element.key;
           this.storesList.push(x as Store);
         });
+        this.loading = false;
       });
   }
 
@@ -42,6 +47,10 @@ export class StoreListComponent implements OnInit {
       verticalPosition: 'bottom',
       horizontalPosition: 'right'
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

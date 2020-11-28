@@ -2,8 +2,10 @@
   Listado de Tiendas
 </h1>
 
+<app-spinner *ngIf="loading"></app-spinner>
+
 <!-- mobile -->
-<div fxHide.gt-xs="true">
+<div *ngIf="!loading" fxHide.gt-xs="true">
   <p>CELULAR</p>
   <div *ngFor="let store of storesList">
     <mat-card class="mb-2 pb-4">
@@ -63,7 +65,7 @@
 </div>
 
 <!-- bigger than mobile -->
-<div fxHide.lt-sm="true">
+<div *ngIf="!loading" fxHide.lt-sm="true">
   <p>TABLET +</p>
   <div *ngFor="let store of storesList">
     <mat-card class="mb-2 pb-4">

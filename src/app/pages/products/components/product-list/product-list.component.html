@@ -2,6 +2,9 @@
   <div ng-typography>
     <h1>Productos</h1>
   </div>
+
+  <app-spinner *ngIf="loading"></app-spinner>
+
   <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="2rem">
     <div *ngFor="let product of productList" class="w-70">
       <mat-card>

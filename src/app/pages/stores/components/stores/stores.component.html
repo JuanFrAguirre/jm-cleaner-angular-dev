@@ -4,35 +4,37 @@
     Listado de Tiendas
   </h1>
 
+  <app-spinner *ngIf="loading"></app-spinner>
+
   <div class="list-grid">
-      <mat-card *ngFor="let store of storesList">
-        <mat-card-content class="">
-          <mat-card-header>
-            <div *ngIf="store.typeOfStore" mat-card-avatar class="pharmacy-color">
-              <p>F</p>
-            </div>
-            <div *ngIf="!store.typeOfStore" mat-card-avatar class="optical-color">
-              <p>O</p>
-            </div>
-            <mat-card-title>
-              <span>{{store.name}}</span>
-            </mat-card-title>
-            <mat-card-subtitle>
-              <span>{{store.address}}</span>
-            </mat-card-subtitle>
-          </mat-card-header>
-
-          <div *ngIf="store.website">
-            <span>{{store.website}}</span>
+    <mat-card *ngFor="let store of storesList">
+      <mat-card-content class="">
+        <mat-card-header>
+          <div *ngIf="store.typeOfStore" mat-card-avatar class="pharmacy-color">
+            <p>F</p>
           </div>
-
-          <div *ngIf="store.phone">
-            <span>{{store.phone}}</span>
+          <div *ngIf="!store.typeOfStore" mat-card-avatar class="optical-color">
+            <p>O</p>
           </div>
+          <mat-card-title>
+            <span>{{store.name}}</span>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <span>{{store.address}}</span>
+          </mat-card-subtitle>
+        </mat-card-header>
 
-          <span>{{store.location}}</span>
-        </mat-card-content>
-      </mat-card>
+        <div *ngIf="store.website">
+          <span>{{store.website}}</span>
+        </div>
+
+        <div *ngIf="store.phone">
+          <span>{{store.phone}}</span>
+        </div>
+
+        <span>{{store.location}}</span>
+      </mat-card-content>
+    </mat-card>
   </div>
 
 </div>

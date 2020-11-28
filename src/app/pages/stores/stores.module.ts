@@ -5,6 +5,7 @@ import { StoresRoutingModule } from './stores-routing.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { StoresComponent } from './components/stores/stores.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     StoresRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule
   ]
 })
 export class StoresModule { }

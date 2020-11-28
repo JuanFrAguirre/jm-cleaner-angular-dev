@@ -1,3 +1,4 @@
+import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -18,8 +19,9 @@ const routes: Routes = [
       },
       {
         path: '',
+        pathMatch: 'exact',
         component: HomeComponent
-      }
+      },
     ]
   }
 ];

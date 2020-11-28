@@ -7,11 +7,12 @@ import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, SpinnerComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     FlexLayoutModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }
